@@ -50,7 +50,7 @@ const BahanBakuList = () => {
     });
 
     const getBahanBaku = async () => {
-        const response = await axios.get('http://localhost:5000/bahan-baku');
+        const response = await axiosJWT.get('http://localhost:5000/bahan-baku');
         console.log(response.data)
         setBahanBaku(response.data);
     }

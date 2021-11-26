@@ -73,7 +73,6 @@ const BahanBakuList = () => {
                         <th>No</th>
                         <th>Nama Bahan</th>
                         <th>Stok</th>
-                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -83,9 +82,6 @@ const BahanBakuList = () => {
                         <td>{index+1}</td>
                         <td>{bahanBaku.nama_bahan}</td>
                         <td>{bahanBaku.stok}</td>
-                        <td>
-                            <button className="button is-small is-info mr-2" onClick={console.log("edit bytton")}>Edit</button>
-                        </td>
                     </tr>
                     ))}
                 </tbody>

@@ -4,8 +4,10 @@ import AddResep from './components/AddResep';
 import EditBahanBaku from './components/EditBahanBaku';
 import Login from "./components/Login";
 import Register from './components/Register';
+import RequestTokoList from './components/RequestTokoList';
 import BahanBaku from './container/BahanBaku';
 import Home from './container/Home';
+import RequestToko from './container/RequestToko';
 import Resep from './container/Resep';
 
 function App() {
@@ -19,7 +21,7 @@ function App() {
         <Route  path="/add-resep" element={<AddResep/>}/>
         <Route  path="/bahan-baku" element={<BahanBaku/>}/>
         <Route  path="/add-bahan-baku" element={<AddBahanBaku/>}/>
-        <Route  path="/edit-bahan-baku/:id" element={<EditBahanBaku/>}/>
+        <Route  path="/request-toko" element={<RequestToko/>}/>
       </Routes>
     </BrowserRouter>
   );

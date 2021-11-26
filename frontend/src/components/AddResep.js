@@ -76,7 +76,6 @@ const AddResep = () => {
             },
             nama_resep: namaResep,
             bahan_baku: [],
-            jumlah: []
         });
         navigate("/resep")
     }

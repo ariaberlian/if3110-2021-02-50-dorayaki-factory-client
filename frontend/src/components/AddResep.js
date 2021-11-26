@@ -8,7 +8,7 @@ import jwt_decode from 'jwt-decode';
 const AddResep = () => {
 
     const [namaResep, setNamaResep] = useState('');
-    const [jumlahJenisBahan, setJumlahJenisBahan] = useState(0);
+    const [jumlahJenisBahan, setJumlahJenisBahan] = useState([]);
     const [bahanBaku, setBahanBaku] = useState([]);
     const [username, setUsername] = useState('');
     const [token, setToken] = useState('');
@@ -64,18 +64,31 @@ const AddResep = () => {
             namaBahan: "",
             jumlahBahan: 1,
         }
-
         setForm((prev) => [...prev, bahan]);
     };
 
     const saveResep = async (e) => {
         e.preventDefault();
+        console.log(form);
+        let bahan = [];
+        let jum = [];
+        let a;
+        for (let i = 0; i < form.length; i++) {
+            const element = form[i];
+            console.log(element.namaBahan);
+            console.log(element.jumlahBahan);
+            bahan[i] = element.namaBahan;
+            a = element.jumlahBahan
+            if(typeof  a === 'string' ||  a instanceof String){
+                a = parseInt(element.jumlahBahan);
+            }
+            jum[i] = a;
+        }
+
         await axiosJWT.post('http://localhost:5000/tambah-resep',{
-            headers:{
-                Authorization: `Bearer ${token}`
-            },
             nama_resep: namaResep,
-            bahan_baku: [],
+            bahan_baku: bahan,
+            jumlah : jum
         });
         navigate("/resep")
     }

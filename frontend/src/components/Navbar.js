@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -23,7 +23,7 @@ const Navbar = () => {
                  <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" alt="logo"/>
                </a>
 
-               <a href="/" role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+               <a href="" role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                  <span aria-hidden="true"></span>
                  <span aria-hidden="true"></span>
                  <span aria-hidden="true"></span>
@@ -32,9 +32,18 @@ const Navbar = () => {
 
              <div id="navbarBasicExample" className="navbar-menu">
                <div className="navbar-start">
-                 <a href="/" className="navbar-item">
+                 <Link to="/home" className="navbar-item">
                    Home
-                 </a>
+                 </Link> 
+                 <Link to="/resep" className="navbar-item">
+                   Resep
+                 </Link>
+                 <Link to="/bahan-baku" className="navbar-item">
+                   Bahan Baku
+                 </Link>
+                 <Link to="/request-toko" className="navbar-item">
+                   Request Toko
+                 </Link>
                </div>
 
                <div className="navbar-end">

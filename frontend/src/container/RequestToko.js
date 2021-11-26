@@ -16,7 +16,7 @@ class RequestToko extends Component {
                 <Navbar/>
                 <div className="container">
                     <div className="columns">
-                        <div className="column is-half is-offset-one-quarter">
+                        <div className="column is-three-quarters ">
                             <RequestTokoList/>
                             {/* <Routes>
                                 <Route exact  ="/" element={<ResepList/>} />

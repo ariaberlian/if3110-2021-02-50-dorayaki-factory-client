@@ -67,6 +67,8 @@ const BahanBakuList = () => {
              {/* {
                  clickEdit ? <EditForm /> : null
              } */}
+                         <h1>DAFTAR BAHAN BAKU</h1>
+
             <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" >
                 <thead>
                     <tr>

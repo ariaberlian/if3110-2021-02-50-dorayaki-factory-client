@@ -57,6 +57,7 @@ const ResepList = () => {
 
     return (
         <div>
+            <h1>DAFTAR RESEP</h1>
             <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" >
                 <thead>
                     <tr>

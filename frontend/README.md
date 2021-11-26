@@ -1,3 +1,13 @@
+# PEMBAGIAN TUGAS
+Azmi M. Syazwana - 13519151
+
+Login: 13519075
+Register: 13519115
+Resep: 13519151
+Dashboard: 13519151
+BahanBaku: 13519151
+RequestToko: 13519151
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

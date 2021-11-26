@@ -55,7 +55,7 @@ const RequestTokoList = () => {
         setRequestToko(response.data);
     }
 
-    function sortTable() {
+    const sortDate = () => {
         var table, rows, switching, i, x, y, shouldSwitch;
         table = document.getElementById("myTable");
         switching = true;
@@ -72,8 +72,42 @@ const RequestTokoList = () => {
             shouldSwitch = false;
             /*Get the two elements you want to compare,
             one from current row and one from the next:*/
-            x = rows[i].getElementsByTagName("td")[0];
-            y = rows[i + 1].getElementsByTagName("td")[0];
+            x = rows[i].getElementsByTagName("td")[4];
+            y = rows[i + 1].getElementsByTagName("td")[4];
+            //check if the two rows should switch place:
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            /*If a switch has been marked, make the switch
+            and mark that a switch has been done:*/
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+      }
+      const sortStatus = () => {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("myTable");
+        switching = true;
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+          //start by saying: no switching is done:
+          switching = false;
+          rows = table.rows;
+          /*Loop through all table rows (except the
+          first, which contains table headers):*/
+          for (i = 1; i < (rows.length - 1); i++) {
+            //start by saying there should be no switching:
+            shouldSwitch = false;
+            /*Get the two elements you want to compare,
+            one from current row and one from the next:*/
+            x = rows[i].getElementsByTagName("td")[3];
+            y = rows[i + 1].getElementsByTagName("td")[3];
             //check if the two rows should switch place:
             if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
               //if so, mark as a switch and break the loop:
@@ -118,10 +152,12 @@ const RequestTokoList = () => {
                         <th>ID Request</th>
                         <th>Varian</th>
                         <th>Jumlah Penambahan</th>
-                        <th>Status</th>
+                        <th>Status
+                            <button className="button is-small is-info ml-5" onClick="sortStatus()">Sort</button>
+                        </th>
                         <th>
                             Date
-                            <button className="button is-small is-info ml-5" onClick="sortTable()">Sort</button>
+                            <button className="button is-small is-info ml-5" onClick="sortDate()">Sort</button>
                         </th>
                     </tr>
                 </thead>

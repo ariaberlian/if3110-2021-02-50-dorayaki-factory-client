@@ -55,7 +55,7 @@ const Dashboard = () => {
 
     return (
         <div className="container mt-5">
-            <h1>Welcome Back: {username} </h1>
+            <h1>Welcome Back {username} </h1>
             {/* <button onClick={getUsers} className="button is-info">Get Users</button> */}
         </div>
     )

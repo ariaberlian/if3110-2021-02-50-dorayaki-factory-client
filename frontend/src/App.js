@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AddResep from './components/AddResep';
 import Login from "./components/Login";
 import Register from './components/Register';
+import BahanBaku from './container/BahanBaku';
 import Home from './container/Home';
 import Resep from './container/Resep';
 
@@ -14,6 +15,7 @@ function App() {
         <Route  path="/home" element={<Home/>}/>
         <Route  path="/resep" element={<Resep/>}/>
         <Route  path="/add-resep" element={<AddResep/>}/>
+        <Route  path="/bahan-baku" element={<BahanBaku/>}/>
       </Routes>
     </BrowserRouter>
   );

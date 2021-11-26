@@ -4,6 +4,8 @@ import axios from "axios";
 import jwt_decode from 'jwt-decode';
 import BahanBaku from "../container/BahanBaku";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import EditForm from "./EditForm";
 
 
 const BahanBakuList = () => {
@@ -54,15 +56,24 @@ const BahanBakuList = () => {
         console.log(response.data)
         setBahanBaku(response.data);
     }
+    // let clickEdit = false;
+    // const handleForm = (namaBahan) => {
+    //     clickEdit = true;
+    // }
 
     return (
-        <div>
+            
+         <div>
+             {/* {
+                 clickEdit ? <EditForm /> : null
+             } */}
             <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" >
                 <thead>
                     <tr>
                         <th>No</th>
                         <th>Nama Bahan</th>
                         <th>Stok</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,10 +83,14 @@ const BahanBakuList = () => {
                         <td>{index+1}</td>
                         <td>{bahanBaku.nama_bahan}</td>
                         <td>{bahanBaku.stok}</td>
+                        <td>
+                            <button className="button is-small is-info mr-2" onClick={console.log("edit bytton")}>Edit</button>
+                        </td>
                     </tr>
                     ))}
                 </tbody>
             </table>
+            <EditForm/>
         </div>
     )
 }

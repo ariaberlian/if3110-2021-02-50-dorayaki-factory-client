@@ -90,7 +90,7 @@ const AddResep = () => {
             bahan_baku: bahan,
             jumlah : jum
         });
-        navigate("/resep")
+        navigate("/resep");
     }
 
     const onChange = (index, event) => {
@@ -142,7 +142,7 @@ const AddResep = () => {
                                             <input className="input" type="number" placeholder="3" required name='jumlahBahan' value={item.jumlahBahan} onChange={(e) => onChange(index, e)}/>
                                         </div>
                                         <div className="column">
-                                            <button class="button is-danger" style={{marginTop: "32px"}} onClick={(e) => handleRemoveField(e, index)}>X</button>
+                                            <button className="button is-danger" style={{marginTop: "32px"}} onClick={(e) => handleRemoveField(e, index)}>X</button>
                                         </div>
 
                                     </div>

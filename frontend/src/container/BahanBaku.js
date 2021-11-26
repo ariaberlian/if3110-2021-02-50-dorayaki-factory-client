@@ -11,6 +11,7 @@ class BahanBaku extends Component {
         return(
             <Fragment>
                 <Navbar/>
+                <Link to="/add-bahan-baku" className="button is-primary mt-2">Tambah Bahan Baku</Link>
                 <div className="container">
                     <div className="columns">
                         <div className="column is-half is-offset-one-quarter">

@@ -70,9 +70,9 @@ const AddResep = () => {
 
     const saveResep = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/tambah-resep',{
+        await axiosJWT.post('http://localhost:5000/tambah-resep',{
             headers:{
-                Authorization: `Baearer ${token}`
+                Authorization: `Bearer ${token}`
             },
             nama_resep: namaResep,
             bahan_baku: [],
@@ -80,8 +80,6 @@ const AddResep = () => {
         });
         navigate("/resep")
     }
-
-
 
     const onChange = (index, event) => {
         event.preventDefault();
